@@ -157,7 +157,6 @@ const App: React.FC = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.container}>
-        <View></View>
         <View
           style={{
             flexDirection: 'row',
@@ -171,11 +170,9 @@ const App: React.FC = () => {
               justifyContent: 'center',
               height: 200,
             }}>
-            <Text style={[styles.title, {marginBottom: 20}]}>
-              Little Mike's
-            </Text>
+            <Text style={styles.title}>Little Mike's</Text>
             <Text style={styles.title}>Trolling</Text>
-            <Text style={[styles.title, {marginTop: 20}]}>Calculator</Text>
+            <Text style={styles.title}>Calculator</Text>
           </View>
         </View>
 
@@ -211,12 +208,10 @@ const App: React.FC = () => {
           onValueChange={(value: number) => setTargetDepth(value)}
         />
         <View style={styles.outputContainer}>
-          {lineLength && (
-            <Text style={styles.output}>
-              {feet && 'Let out '}
-              {lineLength} {feet && 'feet of line'}
-            </Text>
-          )}
+          <Text style={styles.output}>
+            {feet && 'Let out '}
+            {lineLength} {feet && 'feet of line'}
+          </Text>
         </View>
       </View>
     </SafeAreaView>
@@ -226,55 +221,51 @@ const App: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    backgroundColor: '#F0F8FF', // Soft background color
   },
   image: {
-    width: 140, // Set the width as needed
-    height: 200, // Set the height as needed
-    resizeMode: 'contain', // or 'cover', depending on your needs
-  },
-  input: {
-    width: '100%',
-    borderWidth: 1,
-    borderColor: '#ddd',
-    padding: 10,
-    marginBottom: 10,
-  },
-  output: {
-    marginTop: 20,
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#ffffff',
-  },
-  outputContainer: {
-    borderWidth: 3,
-    width: '100%',
-    borderRadius: 20,
-    height: 100,
-    paddingBottom: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#000000',
-    margin: 20,
+    width: 140,
+    height: 200,
+    resizeMode: 'contain',
+    marginBottom: 20, // Add some space below the image
   },
   sliderContainer: {
-    width: '80%',
-    marginBottom: 20,
+    width: '90%',
+    marginBottom: 30,
   },
   slider: {
     width: '100%',
     height: 40,
   },
   subtitle: {
-    fontSize: 20,
+    fontSize: 18,
+    color: '#2F4F4F', // Darker color for better readability
+    marginBottom: 10, // Space between text and slider
   },
   title: {
-    fontSize: 30,
+    fontSize: 32,
     fontWeight: 'bold',
+    color: '#2F4F4F', // Theme color for titles
+    textAlign: 'center', // Center-align titles
+    marginBottom: 10, // Space below the title
+  },
+  outputContainer: {
+    marginTop: 30,
+    padding: 15,
+    borderRadius: 10,
+    backgroundColor: '#B0C4DE', // Light theme color for the output container
+    borderWidth: 1,
+    borderColor: '#708090', // Border color that matches the theme
+  },
+  output: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#2F4F4F', // Dark color for text
   },
 });
+
 
 export default App;
 
